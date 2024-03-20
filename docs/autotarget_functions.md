@@ -8,7 +8,7 @@ Some functions are inherited from mavlink, mavros libraries or adapted from the 
 
 ***Hey there is a [C++ version](../include/autotarget_functions.hpp) which contains all functions.***
 
- ## Example Programs 
+ ## Example Distributed ROS Programs 
 
  How to run example programs with Singe-UAV:
  ```bash
@@ -26,8 +26,10 @@ $ cd ~/catkin_ws/src/autotarget/
 $ catkin build autotarget 
 ```
 
-* ### [`square.py`](../scripts/square.py)
-  * Example program that will make the drone move in a square.
+* ### [`ros_test_xyz.cpp`](../src/ros_test_xyz.cpp)
+  * Example program that will make local frame navigation based on X, Y, Z coordinates.
+* ### [`ros_test_lla.cpp`](../src/ros_test_lla.cpp)
+  * Example program that will make global navigation from list of GPS coordinaites.
 * ### [`subscriber.py`](../scripts/subscriber.py)
   * Example program showing how to use a ROS subscriber to take input into your drone's guidance node.
 * ### [`snr.py`](../scripts/snr.py)
