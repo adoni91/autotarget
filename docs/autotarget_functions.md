@@ -19,27 +19,57 @@ $ roslaunch autotarget <launch_file.launch>
  ```
 
 > <span style="color:red">Note </span>\
-> You have to make the build the program files. You can do this by:
+> You have to make the build of the program files. You can do this by:
 
 ```console
 $ cd ~/catkin_ws/src/autotarget/
 $ catkin build autotarget 
 ```
-
+* ### [`arm_rotors.cpp`](../src/arm_rotors.cpp)
+  * Example program that arms the rotors.
+* ### [`safety.cpp`](../src/safety.cpp)
+  * Example program that lands and disarms the rotors of the drone in case of emergency (e.g low battery, lost of signal...).
+* ### [`random_fly_xyz.cpp`](../src/random_fly_xyz.cpp)
+  * Example program that will make local frame navigation and send its x,y,z coordinates in real-time.. It's an adapted program of Intelligent-Quads. 
+* ### [`random_fly_lla.cpp`](../src/random_fly_lla.cpp)
+  * Example program that will make global navigation and send its coordinates in real-time. It's an adapted program of Intelligent-Quads. 
 * ### [`ros_test_xyz.cpp`](../src/ros_test_xyz.cpp)
-  * Example program that will make local frame navigation based on X, Y, Z coordinates.
+  * Example program that will make local frame navigation based on x,y,z coordinates. We call the navigate_to_local_waypoints(...) function to navigate locally with feedbacks.
 * ### [`ros_test_lla.cpp`](../src/ros_test_lla.cpp)
-  * Example program that will make global navigation from list of GPS coordinaites.
-* ### [`subscriber.py`](../scripts/subscriber.py)
-  * Example program showing how to use a ROS subscriber to take input into your drone's guidance node.
-* ### [`snr.py`](../scripts/snr.py)
-  * Simple search and rescue program that will fly a search pattern until YOLO detects a person. This will trigger the drone to land to deliver the rescue supplies.
-* ### [`obs_avoid.py`](../scripts/obs_avoid.py)
-  * Example obstacle avoidance program utilizing the potential field method to avoid obstacles.
-
+  * Example program that will make global navigation from list of GPS coordinaites. We call the navigate_to_global_waypoints(...) function to navigate globally with feedbacks.
+* ### [`set_wp.cpp`](../src/set_wp.cpp)
+  * Simple program that performs global navigation. We call the wait(...) function to let the drone waits for a certain time before performing another tasks.
+* ### [`takeoff_yaw_land.cpp`](../src/takeoff_yaw_land.cpp)
+  * Example program showing how to use basic functions like takeoff, hold altitude, rotate yaw and land.
+* ### [`sendtopic.cpp`](../src/sendtopic.cpp)
+  * Simple program to publish a topic.
+* ### [`receivetopic.cpp`](../src/receivetopic.cpp)
+  * Simple program to receive a topic 
+* ### [`fly_path.cpp`](../src/fly_path.cpp)
+  * Program that runs the coverage path planning (cpp) algorithm. We can change the cpp algorithm to Parallel back-and-forth, Creeping back-and-forth, Square, Sector-search, Barrier Patrol, Energy-aware back-and-forth, Energy-aware spiral, HILBERT, SCAN and LMAT
+* ### [`relative_altitude_service.cpp`](../src/services/relative_altitude_service.cpp)
+  * A service to feed in real-time the relative altitude in meter of the drone.
+* ### [`relative_altitude_client.cpp`](../src/services/relative_altitude_client.cpp)
+  * A service to get the relative altitude in meter for any client drone.
+* ### [`nav_sat_fix_service.cpp`](../src/services/nav_sat_fix_service.cpp)
+  * A service to feed in real-time the navigation satellite fix position of the drone.
+* ### [`nav_sat_fix_client.cpp`](../src/services/nav_sat_fix_client.cpp)
+  * A service to stream the navigation satellite fix position of the client drone.
+* ### [`flight_state_service.cpp`](../src/services/flight_state_service.cpp)
+  * A service to feed in real-time the flight state the drone.
+* ### [`flight_state_client.cpp`](../src/services/flight_state_client.cpp)
+  * A service to strea; the flight state of the client drone.
+* ### [`compass_hdg_service.cpp`](../src/services/compass_hdg_service.cpp)
+  * A service to feed in real-time the compass of the drone.
+* ### [`compass_hdg_client.cpp`](../src/services/compass_hdg_client.cpp)
+  * A service to get the compass of the client drone.
+* ### [`battery_state_service.cpp`](../src/services/battery_state_service.cpp)
+  * A service to feed in real-time the battery level the drone.
+* ### [`battery_state_client.cpp`](../src/services/battery_state_client.cpp)
+  * A service to stream the battery level a the client drone.
 ---
 
-## API Explanation 
+## How to run a program on multi-UAV 
 
 How to call/use the API:
 
