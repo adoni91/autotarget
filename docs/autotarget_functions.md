@@ -3,23 +3,25 @@
 
 The python version of the API has been designed to work as seamlessly and easily as the c++ version of the API. But since the python version has been implemented with classes the user should create an object for the API. 
 
-The `init_publisher_subscriber()` has been removed in the python version and will be initialized when the object of the class is created. 
 
 ***Hey there is a [C++ version](../include/autotarget.hpp) of the API whose documentation is [here.](https://github.com/Intelligent-Quads/iq_tutorials/blob/master/docs/GNC_functions_documentation.md)***
 
  ## Example Programs 
 
- How to run example programs:
+ How to run example programs with Singe-UAV:
  ```bash
 $ rosrun autotarget <ros_node>
  ```
+ ```bash
+$ roslaunch autotarget <launch_file.launch>
+ ```
 
 > <span style="color:red">Note </span>\
-> You have to make the python files executable. You can do this by:
+> You have to make the build the program files. You can do this by:
 
 ```console
-$ cd ~/catkin_ws/src/autotarget/scripts/
-$ chmod +x *.py 
+$ cd ~/catkin_ws/src/autotarget/
+$ catkin build autotarget 
 ```
 
 * ### [`square.py`](../scripts/square.py)
