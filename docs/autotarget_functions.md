@@ -18,7 +18,7 @@ $ rosrun autotarget <ros_node>
 > You have to make the python files executable. You can do this by:
 
 ```console
-$ cd ~/catkin_ws/src/iq_gnc/scripts/
+$ cd ~/catkin_ws/src/autotarget/scripts/
 $ chmod +x *.py 
 ```
 
