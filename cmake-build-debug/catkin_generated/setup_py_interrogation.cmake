@@ -1,0 +1,7 @@
+set(autotarget_SETUP_PY_SETUP_MODULE "setuptools")
+set(autotarget_SETUP_PY_VERSION "0.0.0")
+set(autotarget_SETUP_PY_SCRIPTS "")
+set(autotarget_SETUP_PY_PACKAGES "autotarget")
+set(autotarget_SETUP_PY_PACKAGE_DIRS "src/autotarget")
+set(autotarget_SETUP_PY_MODULES "")
+set(autotarget_SETUP_PY_MODULE_DIRS "")

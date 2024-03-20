@@ -1,0 +1,8 @@
+prefix=/home/will/catkin_ws/src/autotarget/cmake-build-debug/devel
+
+Name: autotarget
+Description: Description of autotarget
+Version: 0.0.0
+Cflags: -I/home/will/catkin_ws/src/autotarget/cmake-build-debug/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

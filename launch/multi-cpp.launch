@@ -1,0 +1,22 @@
+<launch>
+    <group>
+        <node pkg="autotarget" type="fly_path" name="LMAT" output="screen" ns="/drone1">
+            <param name="namespace" value="/drone1"/>
+            <param name="use_sim_time"  value="true" />
+            <param name="target_system_id" value="1" />
+            <param name="altitude_meter" value="5" />
+            <param name="perception_lenght" value="2" />
+            <param name="wait_time" value="5" />
+        </node>
+    </group>
+    <group>
+        <node pkg="autotarget" type="fly_path" name="LMAT" output="screen" ns="/drone2">
+            <param name="namespace" value="/drone2"/>
+            <param name="use_sim_time"  value="true" />
+            <param name="target_system_id" value="2" />
+            <param name="altitude_meter" value="5" />
+            <param name="perception_lenght" value="2" />
+            <param name="wait_time" value="5" />
+        </node>
+    </group>
+</launch>

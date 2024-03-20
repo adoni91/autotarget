@@ -1,0 +1,4 @@
+#http://docs.ros.org/en/api/std_msgs/html/msg/Float64.html
+float64 data
+---
+bool state
