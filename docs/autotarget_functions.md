@@ -1,18 +1,17 @@
-# [GNC Functions (Python)](../src/iq_gnc/py_gnc_functions.py)
+# [AutoTarget Functions (C++)](../include/autotarget_functions.hpp)
 
-![iq](./imgs/iq.JPG)
 
 The python version of the API has been designed to work as seamlessly and easily as the c++ version of the API. But since the python version has been implemented with classes the user should create an object for the API. 
 
 The `init_publisher_subscriber()` has been removed in the python version and will be initialized when the object of the class is created. 
 
-***Hey there is a [C++ version](../include/gnc_functions.hpp) of the API whose documentation is [here.](https://github.com/Intelligent-Quads/iq_tutorials/blob/master/docs/GNC_functions_documentation.md)***
+***Hey there is a [C++ version](../include/autotarget.hpp) of the API whose documentation is [here.](https://github.com/Intelligent-Quads/iq_tutorials/blob/master/docs/GNC_functions_documentation.md)***
 
  ## Example Programs 
 
  How to run example programs:
  ```bash
-$ rosrun iq_gnc <example_program.py>
+$ rosrun autotarget <ros_node>
  ```
 
 > <span style="color:red">Note </span>\
