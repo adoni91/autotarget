@@ -1,10 +1,12 @@
 # [AutoTarget Functions (C++)](../include/autotarget_functions.hpp)
 
 
-The python version of the API has been designed to work as seamlessly and easily as the c++ version of the API. But since the python version has been implemented with classes the user should create an object for the API. 
+The autotarget API version 1.0 has been designed to make things easier for developers. Implementation is simplified by simple function calls.
+Some functions are inherited from mavlink, mavros libraries or adapted from the iq_gnc API proposed by IntelligentQuads, available here: https://github.com/Intelligent-Quads.
 
 
-***Hey there is a [C++ version](../include/autotarget.hpp) of the API whose documentation is [here.](https://github.com/Intelligent-Quads/iq_tutorials/blob/master/docs/GNC_functions_documentation.md)***
+
+***Hey there is a [C++ version](../include/autotarget_functions.hpp) which contains all functions.***
 
  ## Example Programs 
 
