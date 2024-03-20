@@ -7,7 +7,7 @@ Some functions are inherited from mavlink, mavros libraries or adapted from the 
 
 ***Hey there is a [C++ version](../include/autotarget_functions.hpp) which contains all functions.***
 
- ## Example Distributed ROS Programs 
+ ## Example of Distributed ROS Programs 
 
  How to run example programs with Singe-UAV:
  ```bash
@@ -46,6 +46,8 @@ $ catkin build autotarget
   * Simple program to receive a topic 
 * ### [`fly_path.cpp`](../src/fly_path.cpp)
   * Program that runs the coverage path planning (cpp) algorithm. We can change the cpp algorithm to Parallel back-and-forth, Creeping back-and-forth, Square, Sector-search, Barrier Patrol, Energy-aware back-and-forth, Energy-aware spiral, HILBERT, SCAN and LMAT
+* ### [`rectangle.cpp`](../src/rectangle.cpp)
+  * Program that performs a rectangle.
 * ### [`relative_altitude_service.cpp`](../src/services/relative_altitude_service.cpp)
   * A service to feed in real-time the relative altitude in meter of the drone.
 * ### [`relative_altitude_client.cpp`](../src/services/relative_altitude_client.cpp)
@@ -68,7 +70,171 @@ $ catkin build autotarget
   * A service to stream the battery level a the client drone.
 ---
 
-## How to run a program on multi-UAV 
+ ## Function Explanation
+
+### degreesToRadians()
+```python
+ | degreesToRadians(double degrees)
+```
+Convenrts the angle of the drone from degree to radians.
+
+**Returns**:
+- `double` degrees * M_PI / 180 in radians.
+---
+
+
+### distanceInMeterBetweenEarthCoordinates(...)
+```python
+ | distanceInMeterBetweenEarthCoordinates(double lat1, double lon1, double lat2, double lon2)
+```
+Convenrts the angle of the drone from degree to radians.
+
+**Returns**:
+- `double` earth radius in Km.
+---
+
+
+### wait4command(...) 
+```python
+ | wait4command(int second)
+```
+Spin once the drone executes the next command.
+
+**Returns**:
+- n/a.
+---
+
+
+### wait(...)
+```python
+ | wait(int second)
+```
+Wait for the next command.
+
+**Returns**:
+- n/a.
+---
+
+### set_destination(...)
+```python
+ | set_destination(float x, float y, float z, float psi)
+```
+This function allows you to move the drone to a certain location. These waypoints should be identified in the local reference frame. This is often determined by where the drone is launched. Psi is a counterclockwise rotation around the drone's reference frame, which is defined by the x axis via the drone's right side and the y axis through the drone's front. See the full documentation here : https://github.com/Intelligent-Quads.
+
+**Returns**:
+- n/a.
+---
+
+### set_destination_lla(...)
+```python
+ | set_destination_lla(float lat, float lon, float alt, float heading)
+```
+This functions allows you to move the drone through GPS navigation. It takes as inputthe latitude lat, longitude lon. The altitude alt and heading rotation of the drones  (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- n/a.
+---
+
+
+### set_destination_lla_raw(...)
+```python
+ | set_destination_lla_raw(float lat, float lon, float alt, float heading)
+```
+This functions allows you to move through the GNSS (Global Navigation Satellite Systems) navigation. It takes as input the latitude lat, longitude lon. The altitude alt and heading rotation of the drones  (adapted from https://github.com/Intelligent-Quads). 
+
+**Returns**:
+- n/a.
+---
+
+### arm(...)
+```python
+ | arm()
+```
+This functions allows to arm the drones  (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- 0 - arming successful 
+- -1 - arming failed
+---
+
+### takeoff(...)
+```python
+ | takeoff(float takeoff_alt)
+```
+The takeoff function arms the drone and hovers it above the initial position  (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- 0 - takeoff successful 
+- -1 - arming failed
+- -2 - takeoff failed
+---
+
+
+### takeoff_global(...)
+```python
+ | takeoff_global(float lat, float lon, float alt)
+```
+The takeoff function arms the drone and hovers it above the desired gps position defined by lat, lon (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- 0 - takeoff successful 
+- -1 - arming failed
+- -2 - takeoff failed
+---
+
+
+### check_current_local_altitude_cb(...)
+```python
+ | check_current_local_altitude_cb(const nav_msgs::Odometry::ConstPtr& msg)
+```
+This function is called to verify if the drone has reached it given altitude when we call the takeoff function.
+
+**Returns**:
+- - n/a.
+---
+
+### check_current_local_position_cb(...)
+```python
+ | check_current_local_position_cb(const nav_msgs::Odometry::ConstPtr& msg)
+```
+Check if the desired local position of the drone is reached.
+
+**Returns**:
+- - n/a.
+---
+
+
+### check_current_global_fix_nav_position_cb(...)
+```python
+ | check_current_global_fix_nav_position_cb(const sensor_msgs::NavSatFix::ConstPtr& msg)
+```
+This function uses the GPS approach to check if the desired global position of the drone is reached.
+
+**Returns**:
+- - n/a.
+---
+
+
+### check_current_global_raw_position_cb(...)
+```python
+ | check_current_global_raw_position_cb(const mavros_msgs::GlobalPositionTarget::ConstPtr& lla_raw_msg)
+```
+This function uses theGNSS (Global Navigation Satellite Systems) approach to check if the desired global position of the drone is reached.
+
+**Returns**:
+- - n/a.
+---
+
+
+
+
+
+
+
+
+
+ 
+## How to run a distibuted program on multi-UAV 
 
 How to call/use the API:
 
@@ -77,212 +243,3 @@ How to call/use the API:
 
 	drone = gnc_api()
 ```
-
-### get_current_heading
-
-```python
- | get_current_heading()
-```
-
-Returns the current heading of the drone.
-
-**Returns**:
-
-- `Heading` _Float_ - θ in is degrees.
-
----
-
-### get_current_location
-
-```python
- | get_current_location()
-```
-
-Returns the current position of the drone.
-
-**Returns**:
-
-- `Position` *geometry_msgs.msgs.Point()* - Returns position of type Point().
-
----
-### land
-
-```python
- | land()
-```
-
-The function changes the mode of the drone to LAND.
-
-**Returns**:
-
-- `0` _int_ - LAND successful.
-- `-1` _int_ - LAND unsuccessful.
-
----
-
-### wait4connect
-
-```python
- | wait4connect()
-```
-
-Wait for connect is a function that will hold the program until communication with the FCU is established.
-
-**Returns**:
-
-- `0` _int_ - Connected to FCU.
-- `-1` _int_ - Failed to connect to FCU.
-
----
-
-### wait4start
-
-```python
- | wait4start()
-```
-
-This function will hold the program until the user signals the FCU to mode enter GUIDED mode. This is typically done from a switch on the safety pilot's remote or from the Ground Control Station.
-
-**Returns**:
-
-- `0` _int_ - Mission started successfully.
-- `-1` _int_ - Failed to start mission.
-
----
-
-### set_mode
-
-```python
- | set_mode(mode)
-```
-
-This function changes the mode of the drone to a user specified mode. This takes the mode as a string. \
-`Ex. set_mode("GUIDED")`.
-
-**Arguments**:
-
-- `mode` _String_ - Can be set to modes given in https://ardupilot.org/copter/docs/flight-modes.html
-  
-
-**Returns**:
-
-- `0` _int_ - Mode Set successful.
-- `-1` _int_ - Mode Set unsuccessful.
-
----
-
-### set_speed
-
-```python
- | set_speed(speed_mps)
-```
-
-This function is used to change the speed of the vehicle in guided mode. It takes the speed in meters per second as a float as the input.
-
-**Arguments**:
-
-- `speed_mps` _Float_ - Speed in m/s.
-  
-
-**Returns**:
-
-- `0` _int_ - Speed set successful.
-- `-1` _int_ - Speed set unsuccessful.
-
----
-
-### set_heading
-
-```python
- | set_heading(heading)
-```
-
-This function is used to specify the drone's heading in the local reference frame. Psi is a counter clockwise rotation following the drone's reference frame defined by the x axis through the right side of the drone with the y axis through the front of the drone.
-
-**Arguments**:
-
-- `heading` _Float_ - θ(degree) Heading angle of the drone.
-
----
-
-### set_destination
-
-```python
- | set_destination(x, y, z, psi)
-```
-
-This function is used to command the drone to fly to a waypoint. These waypoints should be specified in the local reference frame. This is typically defined from the location the drone is launched. Psi is counter clockwise rotation following the drone's reference frame defined by the x axis through the right side of the drone with the y axis through the front of the drone.
-
-**Arguments**:
-
-- `x` _Float_ - x(m) Distance with respect to your local frame.
-- `y` _Float_ - y(m) Distance with respect to your local frame.
-- `z` _Float_ - z(m) Distance with respect to your local frame.
-- `psi` _Float_ - θ(degree) Heading angle of the drone.
-
----
-
-### arm
-
-```python
- | arm()
-```
-
-Arms the drone for takeoff.
-
-**Returns**:
-
-- `0` _int_ - Arming successful.
-- `-1` _int_ - Arming unsuccessful.
-
----
-
-### takeoff
-
-```python
- | takeoff(takeoff_alt)
-```
-
-The takeoff function will arm the drone and put the drone in a hover above the initial position.
-
-**Arguments**:
-
-- `takeoff_alt` _Float_ - The altitude at which the drone should hover.
-  
-
-**Returns**:
-
-- `0` _int_ - Takeoff successful.
-- `-1` _int_ - Takeoff unsuccessful.
-
----
-
-### initialize_local_frame
-
-```python
- | initialize_local_frame()
-```
-
-This function will create a local reference frame based on the starting location of the drone. This is typically done right before takeoff. This reference frame is what all of the the set destination commands will be in reference to.
-
----
-
-### check_waypoint_reached
-
-```python
- | check_waypoint_reached(pos_tol=0.3, head_tol=0.01)
-```
-
-This function checks if the waypoint is reached within given tolerance and returns an int of 1 or 0. This function can be used to check when to request the next waypoint in the mission.
-
-**Arguments**:
-
-- `pos_tol` _float, optional_ - Position tolerance under which the drone must be with respect to its position in space. Defaults to 0.3.
-- `head_tol` _float, optional_ - Heading or angle tolerance under which the drone must be with respect to its orientation in space. Defaults to 0.01.
-  
-
-**Returns**:
-
-- `1` _int_ - Waypoint reached successfully.
-- `0` _int_ - Failed to reach Waypoint.
-
