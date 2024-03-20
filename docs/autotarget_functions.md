@@ -5,7 +5,6 @@ The autotarget API version 1.0 has been designed to make things easier for devel
 Some functions are inherited from mavlink, mavros libraries or adapted from the iq_gnc API proposed by IntelligentQuads, available here: https://github.com/Intelligent-Quads.
 
 
-
 ***Hey there is a [C++ version](../include/autotarget_functions.hpp) which contains all functions.***
 
  ## Example Distributed ROS Programs 
