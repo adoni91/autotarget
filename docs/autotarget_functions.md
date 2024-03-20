@@ -260,7 +260,7 @@ Navigates the drone over all specified GPS waypoints. Each time it reaches a poi
 
 ### navigate_to_global_raw_waypoint(...)
 ```python
- | void navigate_to_global_raw_waypoint(std::vector<gnc_api_waypoint> waypointList, int wait_time=1, ros::Rate rate = ros::Rate(2.0))
+ | navigate_to_global_raw_waypoint(std::vector<gnc_api_waypoint> waypointList, int wait_time=1, ros::Rate rate = ros::Rate(2.0))
 ```
 Navigates the drone over all specified RAW GNSS waypoints. Each time it reaches a point, it holds that position for a while. This enables it to perform an action such as taking a photo, rotate, etc.
 
@@ -271,7 +271,7 @@ Navigates the drone over all specified RAW GNSS waypoints. Each time it reaches 
 
 ### publishMessage(...)
 ```python
- | void publishMessage(ros::NodeHandle controlnode, const string& topicname, const string& topicvalue)
+ | publishMessage(ros::NodeHandle controlnode, const string& topicname, const string& topicvalue)
 ```
 This function allows the drone to publish a topic identified by its topicname.
 
@@ -281,7 +281,7 @@ This function allows the drone to publish a topic identified by its topicname.
 
 ### receiveMessage(...)
 ```python
- | void receiveMessage(ros::NodeHandle controlnode, const string& topicname)
+ | receiveMessage(ros::NodeHandle controlnode, const string& topicname)
 ```
 This function allows the drone to subscribe a topic identified by its topicname. It calls the ```receiverCallback(const std_msgs::String::ConstPtr& msg) ``` function for the feedback control.
 
@@ -292,7 +292,7 @@ This function allows the drone to subscribe a topic identified by its topicname.
 
 ### stopReceivingMessage(...)
 ```python
- | void stopReceivingMessage()
+ | stopReceivingMessage()
 ```
 Is called the drone to stop subscribing to a publisher topic.
 
@@ -303,7 +303,7 @@ Is called the drone to stop subscribing to a publisher topic.
 
 ### stopSendingMessage(...)
 ```python
- | void stopSendingMessage()
+ | stopSendingMessage()
 ```
 Is called the drone to stop publishing a ROS topic.
 
@@ -314,7 +314,7 @@ Is called the drone to stop publishing a ROS topic.
 
 ### stopSendingMessage(...)
 ```python
- | int init_publisher_subscriber(ros::NodeHandle controlnode)
+ | init_publisher_subscriber(ros::NodeHandle controlnode)
 ```
 This function is called at the beginning of a program and will start of the communication links to the FCU. The function requires the program's ros nodehandle as an input. It initializes all Publisher, Subscriber and ServiceClient for real-time interaction (adapted from https://github.com/Intelligent-Quads).
 
