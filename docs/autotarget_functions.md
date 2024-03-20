@@ -219,18 +219,109 @@ This function uses the GPS approach to check if the desired global position of t
 ```python
  | check_current_global_raw_position_cb(const mavros_msgs::GlobalPositionTarget::ConstPtr& lla_raw_msg)
 ```
-This function uses theGNSS (Global Navigation Satellite Systems) approach to check if the desired global position of the drone is reached.
+This function uses the GNSS (Global Navigation Satellite Systems) approach to check if the desired global position of the drone is reached.
+
+**Returns**:
+- - n/a.
+---
+
+### stabilize_to_local_altitude(...)
+```python
+ | stabilize_to_local_altitude(int wait_time=2, ros::Rate rate = ros::Rate(2.0))
+```
+This function takeoffs the drone and hovers it at a given altitude until it until it stabilizes.
 
 **Returns**:
 - - n/a.
 ---
 
 
+### navigate_to_local_waypoints(...)
+```python
+ | navigate_to_local_waypoints(std::vector<gnc_api_waypoint> waypointList, int wait_time=1, ros::Rate rate = ros::Rate(2.0))
+```
+Navigates the drone over all specified local x,y,z waypoints. Each time it reaches a point, it holds that position for a while. This enables it to perform an action such as taking a photo, rotate, etc.
+
+**Returns**:
+- - n/a.
+---
 
 
+### navigate_to_global_fix_nav_sat_waypoint(...)
+```python
+ | navigate_to_global_fix_nav_sat_waypoint(std::vector<gnc_api_waypoint> waypointList, int wait_time=1, ros::Rate rate = ros::Rate(2.0))
+```
+Navigates the drone over all specified GPS waypoints. Each time it reaches a point, it holds that position for a while. This enables it to perform an action such as taking a photo, rotate, etc.
+
+**Returns**:
+- - n/a.
+---
 
 
+### navigate_to_global_raw_waypoint(...)
+```python
+ | void navigate_to_global_raw_waypoint(std::vector<gnc_api_waypoint> waypointList, int wait_time=1, ros::Rate rate = ros::Rate(2.0))
+```
+Navigates the drone over all specified RAW GNSS waypoints. Each time it reaches a point, it holds that position for a while. This enables it to perform an action such as taking a photo, rotate, etc.
 
+**Returns**:
+- - n/a.
+---
+
+
+### publishMessage(...)
+```python
+ | void publishMessage(ros::NodeHandle controlnode, const string& topicname, const string& topicvalue)
+```
+This function allows the drone to publish a topic identified by its topicname.
+
+**Returns**:
+- - n/a.
+---
+
+### receiveMessage(...)
+```python
+ | void receiveMessage(ros::NodeHandle controlnode, const string& topicname)
+```
+This function allows the drone to subscribe a topic identified by its topicname. It calls the ```receiverCallback(const std_msgs::String::ConstPtr& msg) ``` function for the feedback control.
+
+**Returns**:
+- - n/a.
+---
+
+
+### stopReceivingMessage(...)
+```python
+ | void stopReceivingMessage()
+```
+Is called the drone to stop subscribing to a publisher topic.
+
+**Returns**:
+- - n/a.
+---
+
+
+### stopSendingMessage(...)
+```python
+ | void stopSendingMessage()
+```
+Is called the drone to stop publishing a ROS topic.
+
+**Returns**:
+- - n/a.
+---
+
+
+### stopSendingMessage(...)
+```python
+ | int init_publisher_subscriber(ros::NodeHandle controlnode)
+```
+This function is called at the beginning of a program and will start of the communication links to the FCU. The function requires the program's ros nodehandle as an input. It initializes all Publisher, Subscriber and ServiceClient for real-time interaction (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- 0 -  Successful 
+- -1 - Failed
+---
 
 
  
