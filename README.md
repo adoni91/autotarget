@@ -40,17 +40,46 @@ Simulations were carried out using Gazebo, APM, SITL and mavproxy. More videos c
 * * ### [`src`](../src/)
   It contains distributed ROS mission implementations. More information about the implemented ROS programs are available here [`../docs/autotarget_functions.md`](../docs/autotarget_functions.md).
 ## 3-How to Launch a Distributed Swarm Programs
-
-[`../docs/`](../docs/)
+We use two approaches to test the reliability of our framework. 
+First, we run the application in a virtual environment. Then we move on to deployment on real drones. This allows us to minimize any risks or possible loss of time.
+* ### [`Simulation testing`](../models/) 
+We assume that Gazebo, mavproxy, sitl and ros are installed.
 How to call/use the API:
 
-```python
-	from iq_gnc.py_gnc_functions import *
+The first step is to launch the gazebo environment by choosing a world. For more information on how to install and run Gazelo, please consult the following link: https://dev.px4.io/v1.11_noredirect/en/ . *<GAZEBO_WORLD_LAUNCH_FILE>* is available from [../launch](https://github.com/adoni91/autotarget/tree/main/launch).
 
-	drone = gnc_api()
+```python
+	roslaunch autotarget <GAZEBO_WORLD_LAUNCH_FILE>
 ```
-* ### [`Simulation testing`](../models/)
+The second step is to launch the simulator software in the loop (SITL). For more information on how it works, please consult the following link: https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html .
+```python
+	start
+```
+
+In the third step, the drones are put into autopilot mode. This eliminates the need for operator intervention. In this case, the drones become autonomous, guided by the ROS signals. This is made possible by Ardupilot Mega (APM) https://www.ardupilot.co.uk/ .
+*<APM_LAUNCH_FILE>* is available from [../launch](https://github.com/adoni91/autotarget/tree/main/launch).
+```python
+	roslaunch autotarget <APM_LAUNCH_FILE>
+```
+Finally, in the last step, we run the ros program. This assumes that you have configured the launch file to assign each ROS node (https://docs.ros.org/en/rolling/Releases.html) to a each drone in the swarm. *<ROS_PROGRAM_LAUNCH_FILE>* is also available from [../launch](https://github.com/adoni91/autotarget/tree/main/launch).
+```python
+	roslaunch autotarget <ROS_PROGRAM_LAUNCH_FILE>
+```
+
 * ### [`Real-world testing`](../models/)
+
+```python
+	roslaunch autotarget <APM_LAUNCH_FILE>
+```
+```python
+	roslaunch autotarget <ROS_PROGRAM_LAUNCH_FILE>
+```
+
+
+https://github.com/Intelligent-Quads.
+
+
+***Hey there is a [C++ version](../include/autotarget_functions.hpp)
 
 ## 4-Scientific Production
 ### Paper
