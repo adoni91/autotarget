@@ -20,7 +20,7 @@ Check out our contributions and feel free to contact us on our [platform] (https
 ## 2-Organization of the Repository
 * ### [`demo`](../demo/)
   This directory contains images and videos of prototypes, simulation tests and field tests with a swarm of real drones.
-Simulations were carried out using Gazebo, APM, SITL and mavproxy. More videos concerning the demo are available here [`../demo/`](../demo/).
+Simulations were carried out using Gazebo, APM, SITL and mavproxy. More videos concerning the demo are available here [`../demo/`](../demo).
 
 * ### [`docs`](../docs/)
   It contains a well-detailed documentation of the functions available in the autotarget API and instructions on how to use some test programs. 
@@ -40,9 +40,17 @@ Simulations were carried out using Gazebo, APM, SITL and mavproxy. More videos c
 * * ### [`src`](../src/)
   It contains distributed ROS mission implementations. More information about the implemented ROS programs are available here [`../docs/autotarget_functions.md`](../docs/autotarget_functions.md).
 ## 3-How to Launch a Distributed Swarm Programs
+
+[`../docs/`](../docs/)
+How to call/use the API:
+
+```python
+	from iq_gnc.py_gnc_functions import *
+
+	drone = gnc_api()
+```
 * ### [`Simulation testing`](../models/)
 * ### [`Real-world testing`](../models/)
-
 
 ## 4-Scientific Production
 ### Paper
