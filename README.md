@@ -8,3 +8,8 @@ autotarget* is an ongoing project aimed at developing an innovative drone swarm 
 ![autotarget](demo/autonomous.webp)
 
 This framework aims to embed intelligence and facilitate the development of collaborative applications designed to operate in a distributed way and on a fleet of drones flying simultaneously. This enables us to rapidly carry out exploratory missions while collecting large quantities of multisource data, such as hyperspectral cameras in the visible, near infrared and short infrared, infrared thermal cameras, magnetometers, radiometers and Lidar sensors. We also develop and test new drone concepts, and share some of our drone systems as open hardware.
+
+## HIFExplo Community Discord
+
+Join our team and contribute to this growing community of swarm application developers.
+Check out our contributions and feel free to contact us on our [platform] (https://discord.gg/xZjXaAf).
