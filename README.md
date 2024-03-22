@@ -1,7 +1,7 @@
 # autotarget <img src='demo/logo.png' width='100' height='100'> 
+**Quick links**: [`api source code`](/include/autotarget_functions.hpp) | [`documentation`](/docs/autotarget_functions.md) | [`demo`](/demo/)
 
 ![autotarget](demo/explo_hif.png)
-
 
 autotarget* is an ongoing project aimed at developing an innovative drone swarm framework that offers maximum flexibility and interoperability with different types of swarm drones. These drones are equipped with on-board sensors and payloads. The design and manufacture of the drones and on-board sensors are carried out in-house at our DroneLab.
 
