@@ -9,9 +9,8 @@ https://github.com/adoni91/autotarget/assets/9494611/88198d22-8fe6-41eb-9d90-915
 
 https://github.com/adoni91/autotarget/assets/9494611/44d9aa52-de38-4b37-b3ab-335675e93e75
 
-2-UAV Swarm  Swarm stabilize
 
-<img width="705" alt="2 UAV-Swarm Local Coverage Path Planning" src="https://github.com/adoni91/autotarget/assets/9494611/60b51973-96b0-49b3-8f4e-2995d6d6b477">
+https://github.com/adoni91/autotarget/assets/9494611/7988b28d-cda3-437c-9016-20fbe61edc2e
 
 
 # Square coverage path planning
@@ -26,8 +25,20 @@ https://github.com/adoni91/autotarget/assets/9494611/bc40d55c-8e0a-45ee-9d24-c01
 
 https://github.com/adoni91/autotarget/assets/9494611/bb5ecf19-6609-4ca0-9232-9ed82298b68f
 
+https://github.com/adoni91/autotarget/assets/9494611/c53fd1d3-ea4c-4404-ada9-cfee8cef0881
+
+2-UAV Swarm  Swarm stabilize
+
+<img width="705" alt="2 UAV-Swarm Local Coverage Path Planning" src="https://github.com/adoni91/autotarget/assets/9494611/60b51973-96b0-49b3-8f4e-2995d6d6b477">
 
 
+
+
+
+# Autonomous navigation
+
+
+https://github.com/adoni91/autotarget/assets/9494611/75f48482-43af-494f-b290-e2d91f0b8a06
 
 
 <img width="1379" alt="2 UAV-Swarm - Collabarative Autonomous Navigation" src="https://github.com/adoni91/autotarget/assets/9494611/c4fbd9e1-e956-4103-8cf9-6ba2f35f85d9">
