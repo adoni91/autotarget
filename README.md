@@ -1,5 +1,5 @@
 # autotarget <img src='demo/logo.png' width='100' height='100'> 
-**Quick links**: [`api source code`](/include/autotarget_functions.hpp) | [`documentation`](/docs/autotarget_functions.md) | [`demo`](/demo/) | [`Intelligent-Quads`](https://github.com/Intelligent-Quads/iq_tutorials)
+**Quick links**: [`getting started guide`](https://github.com/Intelligent-Quads) | [`api source code`](/include/autotarget_functions.hpp) | [`api functions`](/docs/autotarget_functions.md) | [`demo`](/demo/) | [`intelligent-quads`](https://github.com/Intelligent-Quads/iq_tutorials)
 
 ![autotarget](demo/explo_hif.png)
 
@@ -84,7 +84,7 @@ This one is similar to the previous one.
 	roslaunch autotarget <ROS_PROGRAM_LAUNCH_FILE>
 ```
 Below are the drones used for the actual tests. Once the API is fully operational, we'll switch to bigger drones with greater payload capacity.
-![autotarget](demo/Swarm%20UAV.jpg)
+![autotarget](demo/swarm-uav.png)
 
 
 ## 4-Scientific Production
