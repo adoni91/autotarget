@@ -1,5 +1,5 @@
 # autotarget <img src='demo/logo.png' width='100' height='100'> 
-**Quick links**: [`getting started guide`](https://github.com/Intelligent-Quads) | [`api source code`](/include/autotarget_functions.hpp) | [`api functions`](/docs/autotarget_functions.md) | [`demo`](/demo/) | [`intelligent-quads`](https://github.com/Intelligent-Quads/iq_tutorials)
+**Quick links**: [`getting started guide`](https://github.com/Intelligent-Quads) | [`api source code`](/include/autotarget_functions.hpp) | [`api functions`](/docs/autotarget_functions.md) | [`demo`](/demo/DEMO-README.md) | [`intelligent-quads`](https://github.com/Intelligent-Quads/iq_tutorials)
 
 ![autotarget](demo/explo_hif.png)
 
