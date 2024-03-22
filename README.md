@@ -18,68 +18,70 @@ Check out our contributions and feel free to contact us on our [platform] (https
 
 
 ## 2-Organization of the Repository
-* ### [`demo`](../demo/)
+* ### [`demo`](/demo/)
   This directory contains images and videos of prototypes, simulation tests and field tests with a swarm of real drones.
-Simulations were carried out using Gazebo, APM, SITL and mavproxy. More videos concerning the demo are available here [`../demo/`](../demo).
+Simulations were carried out using Gazebo, APM, SITL and mavproxy. More videos concerning the demo are available here [`../demo/`](/demo).
 
-* ### [`docs`](../docs/)
+* ### [`docs`](/docs/)
   It contains a well-detailed documentation of the functions available in the autotarget API and instructions on how to use some test programs. 
-* ### [`include`](../include/)
+* ### [`include`](/include/)
   It contains all the external libraries and object headers that could be added to this project. The current version contains the control, command, communication and coverage path planning librairies: ``` autotarget_functions.hpp ```, ``` drone.h ```, ``` hilbert.h ```, ``` landmark.h ```, ``` point.h ```, ``` sense.h ```, ``` world_circle.h ```, ``` world_quadrilateral.h ```.
-* ### [`models`](../models/)
+* ### [`models`](/models/)
   This folder holds the Gazebo models of type of drones in this project. New models can be added as required. For the moment, we have three type of drones: quadrotors (``` drone1 ... drone12```) and vtol (```standard_vtol```), fixed-wing (```winding_valley_heightmap```). They are equipped with on-board sensors (```drone_with_camera, drone_with_lidar, drone_with_sonar```).
-* ### [`scripts`](../scripts/)
+* ### [`scripts`](/scripts/)
   This directory is used to implement python code. All python files must be added to this folder.
-* ### [`svr`](../svr/)
+* ### [`svr`](/svr/)
   This folder contains the headers of the pre-configured services that the drones can call. The current version includes services to check the battery/flight state, the relative altitude, the compass HDG, the navigation with fixed satellite, and so on.
-* ### [`worlds`](../worlds/)
+* ### [`worlds`](/worlds/)
   A set of Gazebo worlds models and maps that is used for testing the swarm navigation in simulation environment.
-  The ```droneOnly.world``` file is used to simulated the programs with a single-uav swarm. The ```drone2Multi.world, drone2Multi.world, ... , drone6Multi.world``` are used to simulated a distributed ROS programs on respectively a 2-uav swarm, ..., 6-uav swarm. More videos about the swarm simulation are available here [` .../demo/real-world test`](../demo/real-world%20test/).
+  The ```droneOnly.world``` file is used to simulated the programs with a single-uav swarm. The ```drone2Multi.world, drone2Multi.world, ... , drone6Multi.world``` are used to simulated a distributed ROS programs on respectively a 2-uav swarm, ..., 6-uav swarm. More videos about the swarm simulation are available here [` .../demo/real-world test`](/demo/real-world%20test/).
 
   
-* * ### [`src`](../src/)
-  It contains distributed ROS mission implementations. More information about the implemented ROS programs are available here [`../docs/autotarget_functions.md`](../docs/autotarget_functions.md).
+* * ### [`src`](/src/)
+  It contains distributed ROS mission implementations. More information about the implemented ROS programs are available here [`../docs/autotarget_functions.md`](/docs/autotarget_functions.md).
 ## 3-How to Launch a Distributed Swarm Programs
 We use two approaches to test the reliability of our framework. 
 First, we run the application in a virtual environment. Then we move on to deployment on real drones. This allows us to minimize any risks or possible loss of time.
-* ### [`Simulation testing`](../models/) 
+* ### [`Simulation testing`](/models/) 
 We assume that Gazebo, mavproxy, sitl and ros are installed.
 How to call/use the API:
 
-The first step is to launch the gazebo environment by choosing a world. For more information on how to install and run Gazelo, please consult the following link: https://dev.px4.io/v1.11_noredirect/en/ . *<GAZEBO_WORLD_LAUNCH_FILE>* is available from [../launch](https://github.com/adoni91/autotarget/tree/main/launch).
+1. The first step is to launch the gazebo environment by choosing a world. For more information on how to install and run Gazelo, please consult the following link: https://dev.px4.io/v1.11_noredirect/en/ . *<GAZEBO_WORLD_LAUNCH_FILE>* is available from [../launch](/launch).
 
 ```python
 	roslaunch autotarget <GAZEBO_WORLD_LAUNCH_FILE>
 ```
-The second step is to launch the simulator software in the loop (SITL). For more information on how it works, please consult the following link: https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html .
+2. The second step is to launch the simulator software in the loop (SITL). For more information on how it works, please consult the following link: https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html .
+The .sh files for the launch commands are available here. The files with the name "fieldwork" are used to simulate the swarm in an open space in Halsbrücke (lat=50.959782,lon=13.404620).
 ```python
-	start
+	./start-sitl-2uav-swarm.sh
+```
+	
+```python
+	./start-sitl-2uav-swarm-fieldwork.sh
 ```
 
-In the third step, the drones are put into autopilot mode. This eliminates the need for operator intervention. In this case, the drones become autonomous, guided by the ROS signals. This is made possible by Ardupilot Mega (APM) https://www.ardupilot.co.uk/ .
-*<APM_LAUNCH_FILE>* is available from [../launch](https://github.com/adoni91/autotarget/tree/main/launch).
+3. In the third step, the drones are put into autopilot mode. This eliminates the need for operator intervention. In this case, the drones become autonomous, guided by the ROS signals. This is made possible by Ardupilot Mega (APM) https://www.ardupilot.co.uk/ .
+*<APM_LAUNCH_FILE>* is available from [../launch](/launch).
 ```python
 	roslaunch autotarget <APM_LAUNCH_FILE>
 ```
-Finally, in the last step, we run the ros program. This assumes that you have configured the launch file to assign each ROS node (https://docs.ros.org/en/rolling/Releases.html) to a each drone in the swarm. *<ROS_PROGRAM_LAUNCH_FILE>* is also available from [../launch](https://github.com/adoni91/autotarget/tree/main/launch).
+4. Finally, in the last step, we run the ros program. This assumes that you have configured the launch file to assign each ROS node (https://docs.ros.org/en/rolling/Releases.html) to a each drone in the swarm. *<ROS_PROGRAM_LAUNCH_FILE>* is also available from [../launch](/launch).
 ```python
 	roslaunch autotarget <ROS_PROGRAM_LAUNCH_FILE>
 ```
 
-* ### [`Real-world testing`](../models/)
+* ### [`Real-world testing`](/models/)
+This one is similar to the previous one. 
 
+1. We'll just run the *apm-swarm.launch* on the real drones before running the ROS program. This launch file lets you set apm's communication parameters (Wi-Fi or Telemetry) specifically for each drone. 
 ```python
-	roslaunch autotarget <APM_LAUNCH_FILE>
+	roslaunch autotarget apm-swarm.launch
 ```
+2. Run the ROS program deployment file. Unlike the previous case, they will be executed directly on the actual drones set in the *apm-swarm.launch* file.
 ```python
 	roslaunch autotarget <ROS_PROGRAM_LAUNCH_FILE>
 ```
-
-
-https://github.com/Intelligent-Quads.
-
-
-***Hey there is a [C++ version](../include/autotarget_functions.hpp)
 
 ## 4-Scientific Production
 ### Paper
