@@ -82,6 +82,7 @@ This one is similar to the previous one.
 ```python
 	roslaunch autotarget <ROS_PROGRAM_LAUNCH_FILE>
 ```
+[![autotarget](/demo/Swarm%20UAV.jpg)](https://htmlpreview.github.io/?/demo/Swarm-UAV.mp4)
 
 ## 4-Scientific Production
 ### Paper
