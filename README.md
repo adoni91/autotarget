@@ -82,9 +82,9 @@ This one is similar to the previous one.
 ```python
 	roslaunch autotarget <ROS_PROGRAM_LAUNCH_FILE>
 ```
-[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=Hc79sDi3f0U "Now in Android: 55")
+Below are the drones used for the actual tests. Once the API is fully operational, we'll switch to bigger drones with greater payload capacity.
+![autotarget](demo/Swarm%20UAV.jpg)
 
-[![autotarget](/demo/Swarm%20UAV.jpg)](https://github.com/adoni91/autotarget/blob/main/demo/swarm-uav-low-quality.mp4)
 
 ## 4-Scientific Production
 ### Paper
