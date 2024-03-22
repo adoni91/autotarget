@@ -1,5 +1,5 @@
 # autotarget <img src='demo/logo.png' width='100' height='100'> 
-**Quick links**: [`api source code`](/include/autotarget_functions.hpp) | [`documentation`](/docs/autotarget_functions.md) | [`demo`](/demo/)
+**Quick links**: [`api source code`](/include/autotarget_functions.hpp) | [`documentation`](/docs/autotarget_functions.md) | [`demo`](/demo/) | [`Intelligent-Quads`](https://github.com/Intelligent-Quads/iq_tutorials)
 
 ![autotarget](demo/explo_hif.png)
 
@@ -40,10 +40,11 @@ Simulations were carried out using Gazebo, APM, SITL and mavproxy. More videos c
 * * ### [`src`](/src/)
   It contains distributed ROS mission implementations. More information about the implemented ROS programs are available here [`../docs/autotarget_functions.md`](/docs/autotarget_functions.md).
 ## 3-How to Launch a Distributed Swarm Programs
-We use two approaches to test the reliability of our framework. 
-First, we run the application in a virtual environment. Then we move on to deployment on real drones. This allows us to minimize any risks or possible loss of time.
+We use two approaches to test the reliability of our framework. First, we run the application in a virtual environment. Then we move on to deployment on real drones. This allows us to minimize any risks or possible loss of time.
+
 * ### [`Simulation testing`](/models/) 
-We assume that Gazebo, mavproxy, sitl and ros are installed.
+We assume that Gazebo, mavproxy, sitl and ros are installed. Otherwise, please follow the instructions in this following link [`Intelligent-Quads`](https://github.com/Intelligent-Quads/iq_tutorials) for a complete configuration of the working environment.
+
 How to call/use the API:
 
 1. The first step is to launch the gazebo environment by choosing a world. For more information on how to install and run Gazelo, please consult the following link: https://dev.px4.io/v1.11_noredirect/en/ . *<GAZEBO_WORLD_LAUNCH_FILE>* is available from [../launch](/launch).
