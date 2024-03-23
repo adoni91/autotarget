@@ -12,7 +12,7 @@ This framework aims to embed intelligence and facilitate the development of coll
 ## 1-HIFExplo Community Discord
 
 Join our team and contribute to this growing community of swarm application developers.
-Check out our contributions and feel free to contact us on our [platform] (https://www.iexplo.space/).
+Check out our contributions and feel free to contact us on our [platform] (https://www.iexplo.space/) and [git] (https://github.com/hifexplo).
 
 ![autotarget](demo/autotarget-team.png)
 
