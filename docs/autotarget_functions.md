@@ -340,10 +340,8 @@ This function is called at the beginning of a program and will start of the comm
 **Returns**:
 - - n/a.
 ---
+<img width="719" alt="blank mission" src="https://github.com/adoni91/autotarget/blob/main/demo/blank%20mission.png">
 
-![autotarget](demo/autotarget-team.png)
-
-https://github.com/adoni91/autotarget/blob/main/demo/blank%20mission.png
 
 ### blank_mission_rtl(...)
 ```python
@@ -382,6 +380,9 @@ This function is called at the beginning of a program and will start of the comm
 - - n/a.
 ---
 
+<img width="719" alt="blank mission" src="https://github.com/adoni91/autotarget/blob/main/demo/survey.png">
+
+
 ### corridor_scan(...)
 ```python
  | corridor_scan(string filepath,
@@ -400,3 +401,6 @@ This function is called at the beginning of a program and will start of the comm
 **Returns**:
 - - n/a.
 ---
+
+<img width="719" alt="blank mission" src="https://github.com/adoni91/autotarget/blob/main/demo/corridor_scan.jpg">
+
