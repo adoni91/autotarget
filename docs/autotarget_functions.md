@@ -322,3 +322,77 @@ This function is called at the beginning of a program and will start of the comm
 - 0 -  Successful 
 - -1 - Failed
 ---
+
+### blank_mission_land(...)
+```python
+ | blank_mission_land(string filepath,
+                      int cruisespeed,
+                      int hoverspeed,
+                      std::vector<gnc_api_waypoint> items,
+                      std::vector<int> commands,
+                      std::vector<gnc_api_waypoint> polygonsfence,
+                      bool polygonsinclusion,
+                      circlefence circlesfence,
+                      std::vector<gnc_api_waypoint> rallypoints)
+```
+This function is called at the beginning of a program and will start of the communication links to the FCU. The function requires the program's ros nodehandle as an input. It initializes all Publisher, Subscriber and ServiceClient for real-time interaction (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- - n/a.
+---
+
+### blank_mission_rtl(...)
+```python
+ | blank_mission_rtl(string filepath,
+                      int cruisespeed,
+                      int hoverspeed,
+                      std::vector<gnc_api_waypoint> items,
+                      std::vector<int> commands,
+                      std::vector<gnc_api_waypoint> polygonsfence,
+                      bool polygonsinclusion,
+                      circlefence circlesfence,
+                      std::vector<gnc_api_waypoint> rallypoints)
+```
+This function is called at the beginning of a program and will start of the communication links to the FCU. The function requires the program's ros nodehandle as an input. It initializes all Publisher, Subscriber and ServiceClient for real-time interaction (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- - n/a.
+---
+
+### survey(...)
+```python
+ | survey(string filepath,
+          int cruisespeed,
+          int hoverspeed,
+          std::vector<gnc_api_waypoint> surveyarea,
+          std::vector<gnc_api_waypoint> surveyitems,
+          std::vector<gnc_api_waypoint> polygonsfence,
+          bool polygonsinclusion,
+          circlefence circlesfence,
+          std::vector<gnc_api_waypoint> rallypoints,
+          cameracalibration cameracalc)
+```
+This function is called at the beginning of a program and will start of the communication links to the FCU. The function requires the program's ros nodehandle as an input. It initializes all Publisher, Subscriber and ServiceClient for real-time interaction (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- - n/a.
+---
+
+### corridor_scan(...)
+```python
+ | corridor_scan(string filepath,
+                 int cruisespeed,
+                 int hoverspeed,
+                 std::vector<gnc_api_waypoint> corridoritems,
+                 int corridorwidht,
+                 std::vector<gnc_api_waypoint> polygonsfence,
+                 bool polygonsinclusion,
+                 circlefence circlesfence,
+                 std::vector<gnc_api_waypoint> rallypoints,
+                 cameracalibration cameracalc)
+```
+This function is called at the beginning of a program and will start of the communication links to the FCU. The function requires the program's ros nodehandle as an input. It initializes all Publisher, Subscriber and ServiceClient for real-time interaction (adapted from https://github.com/Intelligent-Quads).
+
+**Returns**:
+- - n/a.
+---
