@@ -341,7 +341,7 @@ This function is called at the beginning of a program and will start of the comm
 - - n/a.
 ---
 
-[`demo`](autotarget/demo/blank%20mission.png)
+![autotarget](demo/autotarget-team.png)
 
 https://github.com/adoni91/autotarget/blob/main/demo/blank%20mission.png
 
