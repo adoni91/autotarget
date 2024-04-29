@@ -404,3 +404,24 @@ This function is called at the beginning of a program and will start of the comm
 
 <img width="719" alt="blank mission" src="https://github.com/adoni91/autotarget/blob/main/demo/corridor_scan.jpg">
 
+### polygon_extractor(...)
+```python
+ | polygon_extractor(const char *inputxmlfile, 
+                     string outpoutpolydirectory)
+```
+This function extracts polygon values (latitude and lotitude) from Google Earth kml file and store them in a specified directory.
+
+**Returns**:
+- - n/a.
+---
+
+
+### read_extracted_polygon(...)
+```python
+ | read_extracted_polygon(string polypathfile)
+```
+This function reads the extracted polygon values and returns them in a vector of polygon waypoints.
+
+**Returns**:
+- - n/a.
+---
