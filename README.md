@@ -91,7 +91,7 @@ Below are the drones used for the actual tests. Once the API is fully operationa
 ### Paper
 * W. Y. H. Adoni, S. Lorenz, J. S. Fareedh, R. Gloaguen, and M. Bussmann, “Investigation of Autonomous Multi-UAV Systems for Target Detection in Distributed Environment: Current Developments and Open Challenges”, Drones, vol. 7, no. 4, p. 263, Apr. 2023 [`mdpi drones`](https://www.mdpi.com/2504-446X/7/4/263)
 * W. Y. H. Adoni, S. Lorenz, J. S. Fareedh, T. D. Kühne, and R. Gloaguen, “Intelligent Swarm: Formalism, Design and Validation of Self-Organized UAVs based on Leader-Followers Paradigm for Distributed Mission Planning”, Journal of Intelligent & Robotic Systems, 2024 (under review)
-* W. Y. H. Adoni, S. Lorenz, J. S. Fareedh, R. Gloaguen, and T. D. Kühne, “autotarget*: A Distributed Robot Operating System Framework for Autonomous Aerial Swarms”, The 21st International Conference on Ubiquitous Robots, June 24 - 27, 2024, New York, USA (submitted)
+* W. Y. H. Adoni, S. Lorenz, J. S. Fareedh, R. Gloaguen, and T. D. Kühne, “autotarget*: A Distributed Robot Operating System Framework for Autonomous Aerial Swarms”, The 21st International Conference on Ubiquitous Robots, June 24 - 27, 2024, New York, USA
 
 ### Communication
 * W. Y. H. Adoni, "Concept and Design of Intelligent Swarm for Distributed Mission", PX4 autopilot Developer Summit 2023, Oct 20-21, 2023, New Orleans, Louisiana, USA [`px4summit2023`](https://px4summit2023.sched.com/speaker/w.adoni)
